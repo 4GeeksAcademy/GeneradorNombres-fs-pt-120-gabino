@@ -1,12 +1,27 @@
-let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'racoon'];
+let pronouns = ['the', 'our'];
+let adjs = ['great', 'big'];
+let nouns = ['jogger', 'racoon'];
 
-for (let a = 0; a < pronoun.length; a++) {
-  for (let b = 0; b < adj.length; b++) {
-    for (let d = 0; d < noun.length; d++) {
-      console.log(pronoun[a] + adj[b] + noun[d] + '.com');
-      
+
+/**
+ * 
+ * @param {*} pronouns Array que incluye pronombres
+ * @param {*} adjetives Array que incluye adjetivos
+ * @param {*} nouns Array que incluye nombres 
+ * @returns Una variable con todas las posibilidades de nombres de dominio con los parametros dados.
+ */
+const domainGenerator=(pronouns, adjetives, nouns)=>{
+
+let nombresDominio=""
+
+for (let pronoun of pronouns)
+  for (let adj of adjetives)
+    for (let noun of nouns){
+      noun= `${noun.slice(0,-2)}.${noun.slice(-2)}`
+      nombresDominio+= `${pronoun}${adj}${noun}\n`}
+
+return nombresDominio
+
     }
-  }
-}
+
+console.log(domainGenerator(pronouns, adjs, nouns))
