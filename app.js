@@ -12,7 +12,8 @@ let noun = ['jogger', 'racoon'];
 // }
 
 
-// Cambié a 'for of' para recorrer directamente los valores de cada array
+// Cambie a 'for of' para recorrer directamente los valores de cada array
+//Nombre las variables de una forma mas legible 
 for (let pronombre of pronoun) {
   for (let adjetivo of adj) {
     for (let sustantivo of noun) {
